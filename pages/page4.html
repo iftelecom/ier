@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">  
+        <title>Trabalho-IFSC</title> 
+        <style>
+            body.body{
+                margin: 10%;
+            }
+            h1.titulo{
+                margin-bottom: 5%;
+            }
+            p.texto{
+                font-size: larger;
+                margin-bottom: 5%;
+                line-height: 180%;
+            }
+            .botao{
+                margin: 0 8px;
+                font-size: 16px;
+                color: black;
+                background-color:rgb(177, 231, 201);
+                border-radius: 10%;
+                border: none;
+                width: 15%;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+            .botao:hover {
+                background-color: #599159;
+                color: white;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+    </head>
+<body class="body">
+    <div>
+        <h1 class="titulo">4. Protocolos de Roteamento</h1>
+        <p align="justify" class="texto">
+            Os protocolos de roteamento são os responsáveis pela comunicação entre os roteadores. Eles podem indicar o 
+            menor caminho para atingir uma rede –- são os protocolos baseados na distância (vetor de distância)—ou indicam 
+            o melhor caminho, que geralmente é o caminho menos congestionado. Estes são os baseados no estado do link 
+            (link state), pois testam o caminho para ver se está livre, diferentemente do protocolo baseado na distância. 
+            Também podem ser definidos como protocolos de roteamento interno e externo. <br><br>
+	        <b>Roteamento Interno:</b> Os roteadores utilizados para trocar informações dentro de Sistemas Autônomos são chamados 
+            roteadores internos (interior routers) e podem utilizar uma variedade de protocolos de roteamento interno (Interior 
+            Gateway Protocols - IGPs). Dentre eles estão: RIP, IGRP, EIGRP, OSPF e Integrated IS-IS. <br><br>
+            <b>Roteamento Externo:</b> Roteadores que trocam dados entre Sistemas Autônomos são chamados de roteadores externos 
+            (exterior routers), e estes utilizam o Exterior Gateway Protocol (EGP) ou o BGP (Border Gateway Protocol). Para este 
+            tipo de roteamento são considerados basicamente coleções de prefixos CIDR (Classless Inter Domain Routing) identificados 
+            pelo número de um Sistema Autônomo. Os roteadores que usam protocolos baseados no estado do link necessitam conhecer 
+            todos os roteadores e caminhos existentes para saber qual o melhor caminho para chegar ao destino. Para os roteadores 
+            baseados na distância, isso não é necessário.
+        </p>
+        <div>
+            <h2>4.1 Protocolos de roteamento baseados na distância</h2> 
+            <p align="justify" class="texto">
+               <b>4.1.1 RIP (utilizado pelo IP e pelo IPX):</b> foi um dos primeiros protocolos de roteamento intra-AS da Internet e seu uso é bem difundido até hoje. Sua origem e seu nome podem ser traçados até a arquitetura XNS (Xerox Network Systems). A ampla disponibilidade do RIP se deve, em grande parte, à sua inclusão, em 1982, na versão do UNIX do Berkely Sofware distribution (BSD), que suportava TCP/IP. A versão 1 do RIP está definida na RFC 1058 e a versão 2, compatível com a versão 1, no RFC 1723 (HEDRICK, 1988).
+                A principal diferença entre o RIP versão 1 e versão 2, é que um usa o modelo classfull e outro classless. Ou seja, a versão 1 não envia a máscara nas atualizações. Logo, tal método não pode ser usado em sub-redes, pois sem as máscaras, os roteadores vão classificar os endereços como classes de redes A, B e C. Já a versão 2 do RIP usa classless, ou seja, envia a máscara nas suas atualizações, com isso, sendo possível a utilização em sub-redes.
+                O RIP é um protocolo de vetor de distâncias. Dessa forma, a versão especificada na RFC 1058 usa contagem de saltos como métrica de custo, isto é, cada enlace tem custo 1. No RIP, os custos são definidos desde um roteador de origem até uma sub-rede de destino. O termo salto, que é o número de sub-redes percorridas ao longo do caminho mais curto entre o roteador de origem e uma sub-rede de destino, é utilizado no RIP. <br><br>
+                <b>4.1.2 EIGRP:</b> é protocolo do tipo classless, de vetor de distância porém, com algumas características também de estado de enlace. O EIGRP é uma versão melhorada do antigo IGRP. da mesma forma como o OSPF, o EIGRP usa o conceito de sistema autônomo para descrever um grupo de roteadores que rodam um mesmo tipo de protocolo de roteamento, com isso, compartilhando informações referentes à rede. Quem definiu esse protocolo foi a Cisco, ou seja, o mesmo só roda em equipamentos de tal fabricante (FILIPPETTI, 2008).
+                O EIGRP é capaz de lidar com máscaras de rede, diferentemente do seu antecessor, o IGRP. Com isso, é possível aplicar práticas como VLSM, CIDR e sumarização de rotas. Também possui funções como autenticação, tornando-o mais seguro.   
+                Devido ao fato de o EIGRP manter tanto qualidades de um protocolo de estado de enlace, quanto de um vetor de distância, algumas literaturas o tratam como híbrido, erroneamente. Como o EIGRP tenta trazer o melhor de cada algoritmo, o mesmo é recomendado para redes de grande porte. As principais vantagens que estão na utilização do EIGRP são: é um protocolo classless, suporte VLSM, CIDR, também consegue realizar a sumarização em redes não-contíguas. É eficiente em sua operação, possuindo uma convergência rápida, comparando-se com o RIP. E faz uso do algoritmo DUAL (diffusion update algorithm), que inibe a criação de loops. Entretanto, é um protocolo proprietário Cisco, ou seja, só funciona em equipamentos deste fabricante. E na atualidade, com a diversidade de fabricantes, torna-se muito particular sua utilização (FILIPPETTI, 2008).<br><br>
+                <b>4.1.3 IGRP (utilizados pelos roteadores Cisco):</b> o protocolo também foi criado no início dos anos 80 pela Cisco Systems Inc., detentora de sua patente. O IGRP resolveu grande parte dos problemas associados ao uso do RIP para roteamento interno.
+                O algoritmo utilizado pelo IGRP determina o melhor caminho entre dois pontos dentro de uma rede examinando a largura de banda e o atraso das redes entre roteadores. O IGRP converge mais rapidamente que o RIP, evitando loops de roteamento, e não tem a limitação de saltos entre roteadores.
+                Com estas características, o IGRP viabilizou a implementação de redes grandes, complexas e com diversas topologias. <br>           
+            </p>
+            <h2>4.2 Protocolos baseados no estado do link</h2>  
+            <p align="justify" class="texto">
+               <b>4.2.1 OSPF (utilizado pelo IP):</b> Esse protocolo foi desenvolvido pelo IETF (Internet Engineering Task Force). Caracteriza-se por ser um protocolo intradomínio, hierárquico, baseado no algoritmo de Estado de Enlace (Link-State) e foi especificamente projetado para operar com redes grandes. Outras características do protocolo OSPF são:
+                A inclusão de roteamento por tipo de serviço (TOS – type of service routing); O fornecimento de balanceamento de carga, que permite ao administrador especificar múltiplas rotas com o mesmo custo para um mesmo destino. O OSPF distribui o tráfego igualmente por todas as rotas; O suporte a rotas para hosts, sub-redes e redes específicas; A possibilidade de configuração de uma topologia virtual de rede, independente da topologia das conexões físicas; A utilização de pequenos hello packets para verificar a operação dos links sem ter que transferir grandes tabelas. <br><br>
+                <b>4.2.2 NLSP (utilizado pelo IPX):</b> NetWare Link Services Protocol (NLSP) é um protocolo de roteamento para Internetwork Packet Exchange baseado no protocolo IS-IS (Intermediate-System-to-Intermediate-System ) desenvolvido pela International Organization for Standardization (ISO). O NLSP permite que os servidores NetWare troquem informações de roteamento e serviço sem a alta sobrecarga de broadcast gerada pelo Routing Information Protocol e Service Advertising Protocol . Em vez de retransmitir periodicamente suas informações a cada poucos minutos, como RIP e SAP, o NLSP só transmite a cada duas horas, ou quando há uma mudança em uma rota ou serviço, tornando-o muito mais adequado para uso em uma rede de longa distância. <br><br>
+                <b>4.2.3 PNNI (utilizado pelo ATM):</b> PNNI é um conjunto de protocolos de rede que pode ser usado para descobrir uma topologia de rede ATM, criar um banco de dados de informações de topologia e rotear chamadas sobre a topologia descoberta. PNNI é um protocolo de roteamento link-state , o que significa que o protocolo coleta informações sobre o estado atual dos links e nós na rede para construir um banco de dados de rede. O banco de dados de rede PNNI pode ser usado para determinar a estrutura da rede e o estado atual dos componentes da rede. Para construir o banco de dados da rede PNNI, cada nó PNNI deve receber informações de topologia de todos os outros dispositivos na rede. Para manter o banco de dados atualizado, o nó deve receber atualizações regulares de outros nós.<br><br>
+                <b>4.2.4 IS-IS:</b> Sistema intermediário para sistema intermediário (IS-IS , também escrito ISIS ) é um protocolo de roteamento projetado para mover informações de forma eficiente dentro de uma rede de computadores , um grupo de computadores conectados fisicamente ou dispositivos semelhantes. Ele faz isso determinando a melhor rota para os dados através de uma rede de comutação de pacotes.
+                O protocolo IS-IS é definido na ISO / IEC 10589: 2002 como um padrão internacional dentro do design de referência de Interconexão de Sistemas Abertos (OSI). A Internet Engineering Task Force (IETF) republicou o IS-IS no RFC 1142, mas esse RFC foi posteriormente marcado como "histórico" pelo RFC 7142 porque republicou um rascunho em vez de uma versão final do padrão ISO, causando confusão.<br><br>
+                <b>4.2.5 Integrated IS-IS (Intermediate System to Intermediate System Routing Exchange Protocol):</b> O IS-IS, assim como o OSPF, é um protocolo intradomínio, hierárquico e que utiliza o algoritmo de Estado de Enlace. Pode trabalhar sobre várias sub-redes, inclusive fazendo broadcasting para LANs, WANs e links ponto-a-ponto. 
+                O Integrated IS-IS, como outros protocolos integrados de roteamento, convoca todos os roteadores a utilizarem um único algoritmo de roteamento. Caracteriza-se por ser um protocolo de roteamento inter domínios, criado para uso nos roteadores principais da internet. <br>                
+            </p>
+        </div>
+    </div>   
+    <footer>
+        <button class="botao" type="button" onclick="javascript:history.back()">VOLTAR</button>
+        <button class="botao" type="button" onclick="location.href='page5.html'">PRÓXIMO</button>
+    </footer>
+</body>
+</html>
+

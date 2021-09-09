@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">  
+        <title>Trabalho-IFSC</title> 
+        <style>
+            body.body{
+                margin: 10%;
+            }
+            h1.titulo{
+                margin-bottom: 5%;
+            }
+            p.texto{
+                font-size: larger;
+                margin-bottom: 5%;
+                line-height: 180%;
+            }
+            .botao{
+                margin: 0 8px;
+                font-size: 16px;
+                color: black;
+                background-color:rgb(177, 231, 201);
+                border-radius: 10%;
+                border: none;
+                width: 15%;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+            .botao:hover {
+                background-color: #599159;
+                color: white;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+    </head>
+<body class="body">
+    <div>
+        <h1 class="titulo">5. Classificação dos Roteadores</h1>
+        <p align="justify" class="texto">
+           <b>5.1 Roteamento estático:</b> Utiliza uma rota pré-definida e configurada manualmente pelo administrador da rede. Geralmente, redes com número limitado de roteadores para outras redes são configuradas a partir do roteamento estático. Nesse caso, uma tabela de roteamento estático é construída manualmente pelo administrador do sistema, e pode ou não ser divulgada para outros dispositivos de roteamento na rede.
+            Tabelas estáticas não se ajustam automaticamente a alterações na rede, portanto, devem ser utilizadas somente onde as rotas não sofrem alterações. Algumas vantagens do roteamento estático são a segurança obtida pela não divulgação de rotas que devem permanecer escondidas e a redução do overhead introduzido pela troca de mensagens de roteamento na rede. <br><br>
+            <b>5.2 Roteamento dinâmico:</b> Utiliza protocolos de roteamentos que ajustam automaticamente as rotas de acordo com as alterações de topologia e outros fatores, tais como o tráfego.
+            As redes com mais de uma rota possível para o mesmo ponto devem utilizar roteamento dinâmico. Nesse contexto, uma tabela de roteamento dinâmico é construída a partir de informações trocadas entre protocolos de roteamento. Os protocolos são desenvolvidos para distribuir informações que ajustam rotas dinamicamente para refletir alterações nas condições da rede. Protocolos de roteamento podem resolver situações complexas de roteamento mais rápida e eficientemente que o administrador do sistema.
+            Protocolos de roteamento são desenvolvidos para trocar para uma rota alternativa quando a rota primária se torna inoperável e para decidir qual é a rota preferida para um destino. Em redes onde existem várias alternativas de rotas para um destino devem ser utilizados protocolos de roteamento.            
+            Todos os protocolos de roteamento realizam as mesmas funções básicas. Eles determinam a melhor rota para cada destino e distribuem informações de roteamento entre os sistemas da rede. A forma pela qual eles decidem qual é a melhor rota é o que determina a diferença entre os pacotes de roteamento existentes, que podem ser internos ou externos.
+        </p>
+    </div>   
+    <footer>
+        <button class="botao" type="button" onclick="javascript:history.back()">VOLTAR</button>
+        <button class="botao" type="button" onclick="location.href='page6.html'">PRÓXIMO</button>
+    </footer>
+</body>
+</html>
+

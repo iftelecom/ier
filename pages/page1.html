@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">  
+        <title>Trabalho-IFSC</title> 
+        <link rel="stylesheet" href="style.css"/>
+        <style>
+            body.body-intro{
+                margin: 10%;
+            }
+            h1.titulo-intro{
+                margin-bottom: 5%;
+            }
+            p.introducao{
+                font-size: larger;
+                margin-bottom: 5%;
+                line-height: 180%;
+            }
+            .botao{
+                margin: 0 8px;
+                font-size: 16px;
+                color: black;
+                background-color:rgb(177, 231, 201);
+                border-radius: 10%;
+                border: none;
+                width: 15%;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+            .botao:hover {
+                background-color: #599159;
+                color: white;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+    </head>
+<body class="body-intro">
+    <div>
+        <h1 class="titulo-intro">1. Introdução</h1>
+        <p align="justify" class="introducao">
+            Um roteador (router, em inglês) é um dispositivo que encaminha pacotes de dados entre redes de computadores, 
+            criando um conjunto de redes de sobreposição. Um roteador é conectado a duas ou mais linhas de dados de redes diferentes. 
+            Quando um pacote de dados chega, em uma das linhas, o roteador lê a informação de endereço no pacote para determinar
+            o seu destino final. Em seguida, usando a informação na sua tabela de roteamento e encaminhamento, ele direciona o
+            pacote para a rede de próxima em sua viagem. Os roteadores são os responsáveis pelo "tráfego" na Internet. Um pacote
+            de dados é normalmente encaminhado de um roteador para outro através das redes que constituem a internetwork
+            (interligação de redes) até atingir o destino. E portanto o roteador é tipicamente um dispositivo da camada 3 (rede)
+            do Modelo OSI
+        </p>
+    </div>   
+    <footer>
+        <button class="botao" type="button" onclick="javascript:history.back()">VOLTAR</button>
+        <button class="botao" type="button" onclick="location.href='page2.html'">PRÓXIMO</button>
+    </footer>
+</body>
+</html>
+

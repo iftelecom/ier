@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">  
+        <title>Trabalho-IFSC</title> 
+        <style>
+            body.body{
+                margin: 10%;
+            }
+            h1.titulo{
+                margin-bottom: 5%;
+            }
+            p.texto{
+                font-size: larger;
+                margin-bottom: 5%;
+                line-height: 180%;
+            }
+            .botao{
+                margin: 0 8px;
+                font-size: 16px;
+                color: black;
+                background-color:rgb(177, 231, 201);
+                border-radius: 10%;
+                border: none;
+                width: 15%;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+            .botao:hover {
+                background-color: #599159;
+                color: white;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+    </head>
+<body class="body">
+    <div>
+        <h1 class="titulo">2. Operação</h1>
+        <p align="justify" class="texto">
+            Quando vários roteadores são usados ​​em redes interconectadas, os roteadores podem trocar informações sobre endereços 
+            de destino usando um protocolo de roteamento. Cada roteador constrói uma tabela de roteamento, uma lista de rotas, entre
+            dois sistemas de computador nas redes interconectadas. Um roteador tem dois tipos de componentes de elementos de rede 
+            organizados em planos de processamento separados: </br><br>
+
+            Plano de controle: um roteador mantém uma tabela de roteamento que lista qual rota deve ser usada para encaminhar um pacote
+            de dados e por meio de qual conexão de interface física. Ele faz isso usando diretivas internas pré-configuradas, chamadas de
+            rotas estáticas, ou aprendendo rotas dinamicamente usando um protocolo de roteamento. As rotas estáticas e dinâmicas são 
+            armazenadas na tabela de roteamento. A lógica do plano de controle remove as diretivas não essenciais da tabela e constrói uma 
+            base de informações de encaminhamento (FIB) a ser usada pelo plano de encaminhamento. <br><br>
+
+            Plano de encaminhamento: O roteador encaminha pacotes de dados entre as conexões de interface de entrada e saída. Ele os encaminha
+            para o tipo de rede correto usando informações que o cabeçalho do pacote contém correspondidas às entradas no FIB fornecido pelo
+            plano de controle.
+
+        </p>
+    </div>   
+    <footer>
+        <button class="botao" type="button" onclick="javascript:history.back()">VOLTAR</button>
+        <button class="botao" type="button" onclick="location.href='page3.html'">PRÓXIMO</button>
+    </footer>
+</body>
+</html>
+
